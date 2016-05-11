@@ -1,3 +1,26 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2016 Desutin sumisu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
 local gnode_strafe = { }
 gnode_strafe.MetaPlayer = FindMetaTable( "Player") 
 gnode_strafe.oldKeyDown = gnode_strafe.MetaPlayer['KeyDown']
@@ -63,14 +86,14 @@ concommand.Add( "gnode_strafe", function ()
 	gnode_strafe.On = not gnode_strafe.On	
 	local state = "off"
 	if gnode_strafe.On then state = "on" end
-	print("Bhop ".. state)
+	chat.AddText(Color(204, 40, 40, 255), "[", Color(23, 196, 134, 255), "Bhop", Color(204, 40, 40, 255), "]" .. " ", Color(33, 167, 196, 255), state)
 end)
 	
 concommand.Add( "gnode_strafe_strafe",  function ()
 	gnode_strafe.SOn = not gnode_strafe.SOn
 	local state = "off"
 	if gnode_strafe.SOn then state = "on" end
-	print("Strafe ".. state)
+	chat.AddText(Color(204, 40, 40, 255), "[", Color(23, 196, 134, 255), "strafe", Color(204, 40, 40, 255), "]" .. " ", Color(33, 167, 196, 255), state)
 end)
 
 concommand.Add("gnode_strafe_unload", function()
@@ -84,7 +107,7 @@ concommand.Add("gnode_strafe_unload", function()
 	concommand.Remove( "gnode_strafe_unload" )
 	gnode_strafe = nil
 	
-	print("gnode's autostrafe unloaded")
+	chat.AddText(Color(204, 40, 40, 255), "[", Color(23, 196, 134, 255), "Autostrafe", Color(204, 40, 40, 255), "]" .. " ", Color(33, 167, 196, 255), "has been unloaded!")
 end)
 		   
-print( "gnode's autostrafe is opening!" )
+chat.AddText(Color(204, 40, 40, 255), "[", Color(23, 196, 134, 255), "Autostrafe", Color(204, 40, 40, 255), "]" .. " ", Color(33, 167, 196, 255), "initialized!")
